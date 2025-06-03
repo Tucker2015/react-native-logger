@@ -108,7 +108,11 @@
       "tagName": "v${version}"
     },
     "npm": {
-      "publish": true
+      "private": false,
+      "publish": true,
+      "publishConfig": {
+        "access": "public"
+      }
     },
     "github": {
       "release": true
