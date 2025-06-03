@@ -1,12 +1,10 @@
 import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-logger';
-
-const result = multiply(3, 7);
 
 export default function App() {
+  logError('App component has been rendered');
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Result: </Text>
     </View>
   );
 }
