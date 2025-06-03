@@ -1,3 +1,10 @@
+[![npm version](https://img.shields.io/npm/v/@kevtucker/react-native-logger.svg)](https://www.npmjs.com/package/@kevtucker/react-native-logger)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+# Warning ! 
+
+This package requires a Node.js Express server to handle logs. The recommended library is Winston.
+
 # react-native-logger
 
 A simple logging library for React Native (Expo & iOS/Android) with support for remote logging and global usage.
@@ -17,7 +24,7 @@ yarn add @kevtucker/react-native-logger
 At the top of your main entry file (e.g. `App.tsx` or `index.js`):
 
 ```js
-import 'react-native-logger';
+import '@kevtucker/react-native-logger';
 ```
 
 This attaches the logger functions to `globalThis`, so you can use them anywhere in your app **without importing**.
@@ -33,7 +40,7 @@ declare function logInfo(...args: any[]): void;
 declare function setDefaultAppName(appName: string): void;
 ```
 
-### 3. Set your app name (optional, but recommended)
+### 3. Set your app name (e.g. App.tsx or index.js):
 
 Call this once at the start of your app:
 
