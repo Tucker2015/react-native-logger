@@ -5,9 +5,9 @@ A simple logging library for React Native (Expo & iOS/Android) with support for 
 ## Installation
 
 ```sh
-npm install react-native-logger
+npm install @kevtucker/react-native-logger
 # or
-yarn add react-native-logger
+yarn add @kevtucker/react-native-logger
 ```
 
 ## Usage
