@@ -30,14 +30,51 @@ function sendLog(level: LogLevel, message: string, config?: LoggerConfig) {
     .catch((error) => console.error('Error sending log to server:', error));
 }
 
-export function logError(message: string, config?: LoggerConfig) {
-  sendLog('error', message, config);
+function formatLogArgs(args: any[]): string {
+  return args
+    .map((arg) => {
+      if (typeof arg === 'string') return arg;
+      try {
+        return JSON.stringify(arg);
+      } catch {
+        return String(arg);
+      }
+    })
+    .join(' ');
 }
 
-export function logWarning(message: string, config?: LoggerConfig) {
-  sendLog('warn', message, config);
+export function logError(...args: any[]) {
+  let config: LoggerConfig | undefined;
+  if (
+    args.length &&
+    typeof args[args.length - 1] === 'object' &&
+    (args[args.length - 1].serverUrl || args[args.length - 1].appName)
+  ) {
+    config = args.pop();
+  }
+  sendLog('error', formatLogArgs(args), config);
 }
 
-export function logInfo(message: string, config?: LoggerConfig) {
-  sendLog('info', message, config);
+export function logWarning(...args: any[]) {
+  let config: LoggerConfig | undefined;
+  if (
+    args.length &&
+    typeof args[args.length - 1] === 'object' &&
+    (args[args.length - 1].serverUrl || args[args.length - 1].appName)
+  ) {
+    config = args.pop();
+  }
+  sendLog('warn', formatLogArgs(args), config);
+}
+
+export function logInfo(...args: any[]) {
+  let config: LoggerConfig | undefined;
+  if (
+    args.length &&
+    typeof args[args.length - 1] === 'object' &&
+    (args[args.length - 1].serverUrl || args[args.length - 1].appName)
+  ) {
+    config = args.pop();
+  }
+  sendLog('info', formatLogArgs(args), config);
 }
