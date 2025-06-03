@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet } from 'react-native';
 
 export default function App() {
-  logError('App component has been rendered');
+  logWarning('App component has been rendered');
   return (
     <View style={styles.container}>
       <Text>Result: </Text>

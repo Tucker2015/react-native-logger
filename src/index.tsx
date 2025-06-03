@@ -10,7 +10,7 @@ import {
   logWarning,
   logInfo,
   setDefaultAppName,
-} from 'react-native-logger';
+} from './logger/logger';
 // @ts-ignore
 globalThis.logError = logError;
 // @ts-ignore

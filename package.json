@@ -1,5 +1,5 @@
 {
-  "name": "react-native-logger",
+  "name": "@kevtucker/react-native-logger",
   "version": "0.1.0",
   "description": "A logging library for Expo / iOS",
   "main": "./lib/module/index.js",

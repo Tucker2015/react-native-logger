@@ -1,5 +1,5 @@
 import { registerRootComponent } from 'expo';
-import { setDefaultAppName } from 'react-native-logger';
+import { setDefaultAppName } from '@kevtucker/react-native-logger';
 import App from './src/App';
 
 // Attach logger functions to globalThis for global access (optional)
